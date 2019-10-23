@@ -1,0 +1,123 @@
+----------- SubDyn v1.01.x MultiMember Support Structure Input File ------------
+OC4 'Jacket' SubStructure Input File. The grouted connection is simulated with an equivalent tubular beam of enhanced properties. RRD 10/15/2013
+-------------------------- SIMULATION CONTROL  ---------------------------------
+False            Echo        - Echo input data to "<rootname>.SD.ech" (flag)
+"DEFAULT"        SDdeltaT    - Local Integration Step. If "default", the glue-code integration step will be used.
+             3   IntMethod   - Integration Method [1/2/3/4 = RK4/AB4/ABM4/AM2].
+False             SttcSolve   - Solve dynamics about static equilibrium point
+-------------------- FEA and CRAIG-BAMPTON PARAMETERS---------------------------
+             3   FEMMod      - FEM switch: element model in the FEM. [1= Euler-Bernoulli(E-B);  2=Tapered E-B (unavailable);  3= 2-node Timoshenko;  4= 2-node tapered Timoshenko (unavailable)]
+             1   NDiv        - Number of sub-elements per member
+True             CBMod       - [T/F] If True perform C-B reduction, else full FEM dofs will be retained. If True, select Nmodes to retain in C-B reduced system.
+             12   Nmodes      - Number of internal modes to retain (ignored if CBMod=False). If Nmodes=0 --> Guyan Reduction.
+1,1,0.94, 1, 1, 1.16, 1.29, 1.35, 1.36, 1.36, 1.49, 1.54, 1.74, 1.77, 1.77, 1.89, 1.95, 1.95, 1.97, 2.03, 2.07, 2.11, 2.11, 2.3, 2.55   JDampings   - Damping Ratios for each retained mode (% of critical) If Nmodes>0, list Nmodes structural damping ratios for each retained mode (% of critical), or a single damping ratio to be applied to all retained modes. (last entered value will be used for all remaining modes).
+---- STRUCTURE JOINTS: joints connect structure members (~Hydrodyn Input File)---
+            12   NJoints     - Number of joints (-)
+JointID          JointXss               JointYss               JointZss  [Coordinates of Member joints in SS-Coordinate System]
+  (-)               (m)                    (m)                    (m)
+  53              4.00000                4.00000               20.15000
+  58              6.00000                6.00000              -49.50000
+  62              6.00000                6.00000              -50.00100
+  54             -4.00000                4.00000               20.15000
+  60             -6.00000                6.00000              -49.50000
+  64             -6.00000                6.00000              -50.00100
+  55              4.00000               -4.00000               20.15000
+  57              6.00000               -6.00000              -49.50000
+  61              6.00000               -6.00000              -50.00100
+  56             -4.00000               -4.00000               20.15000
+  59             -6.00000               -6.00000              -49.50000
+  63             -6.00000               -6.00000              -50.00100
+------------------- BASE REACTION JOINTS: 1/0 for Locked/Free DOF @ each Reaction Node ---------------------
+             4   NReact      - Number of Joints with reaction forces; be sure to remove all rigid motion DOFs of the structure  (else det([K])=[0])
+RJointID   RctTDXss    RctTDYss    RctTDZss    RctRDXss    RctRDYss    RctRDZss     [Global Coordinate System]
+  (-)       (flag)      (flag)      (flag)      (flag)      (flag)      (flag)
+  61           1           1           1           1           1           1        "Soil.txt"
+  62           1           1           1           1           1           1        "Soil.txt"
+  63           1           1           1           1           1           1        "Soil.txt"
+  64           1           1           1           1           1           1        "Soil.txt"
+------- INTERFACE JOINTS: 1/0 for Locked (to the TP)/Free DOF @each Interface Joint (only Locked-to-TP implemented thus far (=rigid TP)) ---------
+             4   NInterf     - Number of interface joints locked to the Transition Piece (TP):  be sure to remove all rigid motion dofs
+IJointID   ItfTDXss    ItfTDYss    ItfTDZss    ItfRDXss    ItfRDYss    ItfRDZss     [Global Coordinate System]
+  (-)       (flag)      (flag)      (flag)      (flag)      (flag)      (flag)
+  53           1           1           1           1           1           1
+  54           1           1           1           1           1           1
+  55           1           1           1           1           1           1
+  56           1           1           1           1           1           1
+----------------------------------- MEMBERS --------------------------------------
+           20   NMembers    - Number of frame members
+MemberID   MJointID1   MJointID2   MPropSetID1   MPropSetID2     COSMID
+  (-)         (-)         (-)          (-)           (-)           (-)
+ 101          54          53            4             4 
+ 104          53          55            4             4 
+ 103          55          56            4             4 
+ 102          56          54            4             4 
+ 113          56          57            1             1 
+ 114          60          53            1             1 
+ 115          55          58            1             1 
+ 116          54          59            1             1 
+ 117          58          60            4             4 
+ 118          60          59            4             4 
+ 119          59          57            4             4 
+ 120          57          58            4             4 
+ 105          58          53            3             3 
+ 106          57          55            3             3 
+ 107          60          54            3             3 
+ 108          59          56            3             3 
+ 109          62          58            6             6 
+ 110          61          57            6             6 
+ 111          64          60            6             6 
+ 112          63          59            6             6
+------------------ MEMBER X-SECTION PROPERTY data 1/2 [isotropic material for now: use this table for circular-tubular elements] ------------------------
+             6   NPropSets   - Number of structurally unique x-sections (i.e. how many groups of X-sectional properties are utilized throughout all of the members)
+PropSetID     YoungE          ShearG          MatDens          XsecD           XsecT
+  (-)         (N/m2)          (N/m2)          (kg/m3)           (m)             (m)
+   1        2.10000e+11     8.07690e+10       7850.00         0.800000        0.020000
+   2        2.10000e+11     8.07690e+10       7850.00         1.200000        0.050000
+   3        2.10000e+11     8.07690e+10       7850.00         1.200000        0.035000
+   4        2.10000e+11     8.07690e+10       7850.00         1.200000        0.040000
+   5        2.10000e+11     8.07690e+10       3339.12         2.082000        0.491000
+   6        2.10000e+11     8.07690e+10       7850.00         2.082000        0.060000
+------------------ MEMBER X-SECTION PROPERTY data 2/2 [isotropic material for now: use this table if any section other than circular, however provide COSM(i,j) below] ------------------------
+             0   NXPropSets  - Number of structurally unique non-circular x-sections (if 0 the following table is ignored)
+PropSetID     YoungE          ShearG          MatDens          XsecA          XsecAsx       XsecAsy       XsecJxx       XsecJyy        XsecJ0
+  (-)         (N/m2)          (N/m2)          (kg/m3)          (m2)            (m2)          (m2)          (m4)          (m4)          (m4)
+---------------------- MEMBER COSINE MATRICES COSM(i,j) ------------------------
+             0   NCOSMs      - Number of unique cosine matrices (i.e., of unique member alignments including principal axis rotations); ignored if NXPropSets=0   or 9999 in any element below
+COSMID    COSM11    COSM12    COSM13    COSM21    COSM22    COSM23    COSM31    COSM32    COSM33
+ (-)       (-)       (-)       (-)       (-)       (-)       (-)       (-)       (-)       (-)
+------------------------ JOINT ADDITIONAL CONCENTRATED MASSES--------------------------
+             0   NCmass      - Number of joints with concentrated masses; Global Coordinate System
+CMJointID       JMass            JMXX             JMYY             JMZZ
+  (-)            (kg)          (kg*m^2)         (kg*m^2)         (kg*m^2)
+---------------------------- OUTPUT: SUMMARY & OUTFILE ------------------------------
+True             SSSum       - Output a Summary File (flag).It contains: matrices K,M  and C-B reduced M_BB, M-BM, K_BB, K_MM(OMG^2), PHI_R, PHI_L. It can also contain COSMs if requested.
+False            OutCOSM     - Output cosine matrices with the selected output member forces (flag)
+False            OutAll      - [T/F] Output all members' end forces 
+             2   OutSwtch    - [1/2/3] Output requested channels to: 1=<rootname>.SD.out;  2=<rootname>.out (generated by FAST);  3=both files.
+True             TabDelim    - Generate a tab-delimited output in the <rootname>.SD.out file
+             1   OutDec      - Decimation of output in the <rootname>.SD.out file
+"ES11.4e2"       OutFmt      - Output format for numerical results in the <rootname>.SD.out file
+"A11"            OutSFmt     - Output format for header strings in the <rootname>.SD.out file
+------------------------- MEMBER OUTPUT LIST ------------------------------------------
+             8   NMOutputs   - Number of members whose forces/displacements/velocities/accelerations will be output (-) [Must be <= 9].
+MemberID   NOutCnt    NodeCnt [NOutCnt=how many nodes to get output for [< 10]; NodeCnt are local ordinal numbers from the start of the member, and must be >=1 and <= NDiv+1] If NMOutputs=0 leave blank as well.
+  (-)        (-)        (-)
+  105          1          1       ! M1
+  106          1          1       ! M2
+  107          1          1       ! M3
+  108          1          1       ! M4
+  113         1          1       ! M5
+  114         1          1       ! M6
+  115         1          1       ! M7
+  116         1          1       ! M8
+------------------------- SSOutList: The next line(s) contains a list of output parameters that will be output in <rootname>.SD.out or <rootname>.out. ------
+"M1N1FKXe, M1N1FKYe, M1N1FKZe, M1N1MKXe, M1N1MKYe, M1N1MKZe"
+"M2N1FKXe, M2N1FKYe, M2N1FKZe, M2N1MKXe, M2N1MKYe, M2N1MKZe"
+"M3N1FKXe, M3N1FKYe, M3N1FKZe, M3N1MKXe, M3N1MKYe, M3N1MKZe"
+"M4N1FKXe, M4N1FKYe, M4N1FKZe, M4N1MKXe, M4N1MKYe, M4N1MKZe"
+"M5N1FKXe, M5N1FKYe, M5N1FKZe, M5N1MKXe, M5N1MKYe, M5N1MKZe"
+"M6N1FKXe, M6N1FKYe, M6N1FKZe, M6N1MKXe, M6N1MKYe, M6N1MKZe"
+"M7N1FKXe, M7N1FKYe, M7N1FKZe, M7N1MKXe, M7N1MKYe, M7N1MKZe"
+"M8N1FKXe, M8N1FKYe, M8N1FKZe, M8N1MKXe, M8N1MKYe, M8N1MKZe"
+"ReactFXss, ReactFYss, ReactMXss, ReactMYss, ReactMZss, ReactFZss"
+END of output channels and end of file. (the word "END" must appear in the first 3 columns of this line)
