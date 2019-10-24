@@ -7,4 +7,4 @@ vtk
 *.vtk
 *.dll 
 *.exe
-
+openfast*
