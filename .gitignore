@@ -1,10 +1,9 @@
 *.sum
 *.ech
-*.out
 *.outb
+*.out
 vtk
 *.vtp
 *.vtk
 *.dll 
 *.exe
-openfast*

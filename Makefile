@@ -1,17 +1,27 @@
 
-BASE=Simple_Jacket_Decay/Main_SimpleTripod_FreeDecay
+CASES=Monopile_Decay OC4_Jacket_Decay Simple_Tripod_Decay
+# CASES= Simple_Tripod_Decay
+RULES= $(foreach case,$(CASES), run-$(case) test-$(case))
+
 EXT=out
+FAILFILE=FAIL
 
-BASE=./Monopile_Decay/Main_MonopileOnly
-EXT=outb
+# all: run test
+all: start $(RULES) summary
 
-BASE=./OC4_Jacket_Decay/OC4Jacket_FreeDecay
-EXT=out
+start:
+	@rm -f $(FAILFILE)
 
-all:  run test
+run-%: 
+	@echo "------------------------- RUN $* ----------------------------------"
+	@rm -f $*/Main_$*.out
+	@rm -f $*/Main_$*.sum
+	./openfast $*/Main_$*.fst || true
 
-run: 
-	./openfast $(BASE).fst
+test-%:
+	@echo "------------------------- TEST $* ----------------------------------"
+	@python Test.py $*/Main_$*_ref.$(EXT) $*/Main_$*_ref.$(EXT) && { echo ""; } || { echo "Fail $*">> $(FAILFILE); }
 
-test:
-	python Test.py $(BASE)_ref.$(EXT) $(BASE).$(EXT)
+summary:
+	@echo "------------------------- SUMMARY ----------------------------------"
+	@test -e $(FAILFILE) && { echo "[FAIL]"; cat $(FAILFILE); exit 1; } || { echo "[ OK ]"; } 

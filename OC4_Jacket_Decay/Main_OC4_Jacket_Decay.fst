@@ -3,7 +3,7 @@ FAST Certification Test #21: NREL 5.0 MW Baseline Offshore Turbine with OC4 Jack
 ---------------------- SIMULATION CONTROL --------------------------------------
 False         Echo            - Echo input data to <RootName>.ech (flag)
 "FATAL"       AbortLevel      - Error level when simulation should abort (string) {"WARNING", "SEVERE", "FATAL"}
-        10.0   TMax            - Total run time (s)
+         1.0   TMax            - Total run time (s)
        0.0050   DT              - Recommended module time step (s)
           1   InterpOrder     - Interpolation order for input/output time history (-) {1=linear, 2=quadratic}
           1   NumCrctn        - Number of correction iterations (-) {0=explicit calculation, i.e., no corrections}
@@ -26,8 +26,8 @@ False         Echo            - Echo input data to <RootName>.ech (flag)
 "NA"    InflowFile      - Name of file containing inflow wind input parameters (quoted string)
 "NA"    AeroFile        - Name of file containing aerodynamic input parameters (quoted string)
 "NA"    ServoFile       - Name of file containing control and electrical-drive input parameters (quoted string)
-"OC4Jacket_FreeDecay_HD.dat"    HydroFile       - Name of file containing hydrodynamic input parameters (quoted string)
-"OC4Jacket_FreeDecay_SD.dat"   SubFile         - Name of file containing sub-structural input parameters (quoted string)
+"OC4_Jacket_Decay_HD.dat"    HydroFile       - Name of file containing hydrodynamic input parameters (quoted string)
+"OC4_Jacket_Decay_SD.dat"   SubFile         - Name of file containing sub-structural input parameters (quoted string)
 "unused"      MooringFile     - Name of file containing mooring system input parameters (quoted string)
 "unused"      IceFile         - Name of file containing ice input parameters (quoted string)
 ---------------------- OUTPUT --------------------------------------------------
