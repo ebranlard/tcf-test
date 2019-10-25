@@ -1,5 +1,5 @@
 
-CASES=Monopile_Decay Simple_Tripod_Decay OC4_Jacket_Decay
+CASES= Simple_Tripod_Decay Monopile_Decay OC4_Jacket_Decay
 # CASES= Simple_Tripod_Decay
 RULES= $(foreach case,$(CASES), run-$(case) test-$(case))
 

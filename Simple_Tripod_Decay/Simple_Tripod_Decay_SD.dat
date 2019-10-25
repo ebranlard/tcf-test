@@ -53,6 +53,16 @@ PropSetID     YoungE          ShearG          MatDens          XsecD           X
              0   NXPropSets  - Number of structurally unique non-circular x-sections (if 0 the following table is ignored)
 PropSetID     YoungE          ShearG          MatDens          XsecA          XsecAsx       XsecAsy       XsecJxx       XsecJyy        XsecJ0
   (-)         (N/m2)          (N/m2)          (kg/m3)          (m2)            (m2)          (m2)          (m4)          (m4)          (m4)
+-------------------------- CABLE PROPERTIES  -------------------------------------
+             1   NCablePropSets   - Number of cable cable properties
+PropSetID     EA          MatDens          T0 
+  (-)         (TODO)      (kg/m)         (N) 
+   1        2.10000e+11   7850.00        1.200000    
+----------------------- RIGID LINK PROPERTIES ------------------------------------
+             1   NRigidPropSets - Number of rigid link properties
+PropSetID   MatDens   
+  (-)       (kg/m)  
+   1        7850.00  
 ---------------------- MEMBER COSINE MATRICES COSM(i,j) ------------------------
              0   NCOSMs      - Number of unique cosine matrices (i.e., of unique member alignments including principal axis rotations); ignored if NXPropSets=0   or 9999 in any element below
 COSMID    COSM11    COSM12    COSM13    COSM21    COSM22    COSM23    COSM31    COSM32    COSM33
