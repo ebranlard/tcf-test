@@ -3,11 +3,13 @@ import numpy as np
 import weio
 import sys
 
+BadSignals=['PtfmRoll_[deg]', 'PtfmYaw_[deg]', 'HydroMzi_[N-m]']
 
 
 def compare_df(df_ref,df_cur,precision=1.e-3):
 
     SensorFailed=[]
+    SensorSkipped=[]
     nOK=0
 
     if len(df_ref)!=len(df_cur):
@@ -32,23 +34,29 @@ def compare_df(df_ref,df_cur,precision=1.e-3):
                 if fail:
                     print('{:15s} : abs mean {:.3e}, abs max {:.3e}'.format(c,absdiff_mean,absdiff_max))
             else:
+                precision_loc=precision
                 reldiff_mean = np.mean(np.abs(x0-x1)/ma_ref)
                 reldiff_max  = np.max( np.abs(x0-x1)/ma_ref)
-                fail = reldiff_mean>precision
+                fail = reldiff_mean>precision_loc
                 if fail:
                     print('{:15s} : rel mean {:.3f}%, rel max {:.3f}%'.format(c,reldiff_mean*100,reldiff_max*100))
             if fail: 
-                SensorFailed.append(c)
+                if c in BadSignals:
+                    SensorSkipped.append(c)
+                else:
+                    SensorFailed.append(c)
+
             else:
                 nOK+=1
             
     if len(SensorFailed)==0:
         print('[ OK ] {}/{} sensors passed'.format(nOK,len(df_ref.columns.values)))
-        return True
-        
     else:
         print('[FAIL] {}/{} sensors passed'.format(nOK,len(df_ref.columns.values)))
-        return False
+    if len(SensorSkipped)>0:
+        print('[WARN] {}/{} sensors skipped'.format(len(SensorSkipped),len(df_ref.columns.values)))
+
+    return len(SensorFailed)==0
 
 
 if __name__=='__main__':
@@ -77,4 +85,3 @@ if __name__=='__main__':
         sys.exit(0)
     else :
         sys.exit(1)
-    #BadSignals=['PtfmRoll_[deg]', 'PtfmYaw_[deg]', 'HydroFyi_[N]' , 'HydroMxi_[N-m]',  'HydroMzi_[N-m]']
