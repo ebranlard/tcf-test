@@ -19,28 +19,28 @@ def compare_df(df_ref,df_cur,precision=1.e-3):
         else:
             x0=df_ref[c].values
             x1=df_cur[c].values
-            mref=np.mean(abs(x0))
+            ma_ref=np.mean(np.abs(x0))
 
-            absdiff_mean = np.mean(np.abs(x0-x1))
-            absdiff_max  = np.max(np.abs(x0-x1))
 
-            if mref==0:
-                mref=precision/100
+            if ma_ref<1e-5:
+                # Performing an aboslute test for such low signals
+                ma_cur = np.mean(np.abs(x1))
 
-            reldiff_mean = np.mean(np.abs(x0-x1)/mref)
-            reldiff_max  = np.max( np.abs(x0-x1)/mref)
-
-            if reldiff_mean>1e-3:
-                print('{:15s} : rel mean {}, rel max {}'.format(c,reldiff_mean,reldiff_max))
+                absdiff_mean = np.mean(np.abs(x0-x1))
+                absdiff_max  = np.max(np.abs(x0-x1))
+                fail = absdiff_mean>precision
+                if fail:
+                    print('{:15s} : abs mean {:.3e}, abs max {:.3e}'.format(c,absdiff_mean,absdiff_max))
+            else:
+                reldiff_mean = np.mean(np.abs(x0-x1)/ma_ref)
+                reldiff_max  = np.max( np.abs(x0-x1)/ma_ref)
+                fail = reldiff_mean>precision
+                if fail:
+                    print('{:15s} : rel mean {:.3f}%, rel max {:.3f}%'.format(c,reldiff_mean*100,reldiff_max*100))
+            if fail: 
                 SensorFailed.append(c)
             else:
                 nOK+=1
-#                 
-#             if absdiff_mean>1e-3:
-#                 print('{:15s} : abs mean {}, abs max {}'.format(c,absdiff_mean,absdiff_max))
-#                 SensorFailed.append(c)
-#             else:
-#                 nOK+=1
             
     if len(SensorFailed)==0:
         print('[ OK ] {}/{} sensors passed'.format(nOK,len(df_ref.columns.values)))
@@ -49,8 +49,6 @@ def compare_df(df_ref,df_cur,precision=1.e-3):
     else:
         print('[FAIL] {}/{} sensors passed'.format(nOK,len(df_ref.columns.values)))
         return False
-
-
 
 
 if __name__=='__main__':
@@ -65,7 +63,7 @@ if __name__=='__main__':
     if len(sys.argv)==4:
         precision=sys.argv[3]
     else:
-        precision=1.e-3
+        precision=5.e-2
 
     print('Comparing: ',file_cur)
     print('  against: ',file_ref)
@@ -73,8 +71,10 @@ if __name__=='__main__':
     df_ref = weio.read(file_ref).toDataFrame()
     df_cur = weio.read(file_cur).toDataFrame()
 
+
     OK =compare_df(df_ref,df_cur,precision)
     if OK:
         sys.exit(0)
     else :
         sys.exit(1)
+    #BadSignals=['PtfmRoll_[deg]', 'PtfmYaw_[deg]', 'HydroFyi_[N]' , 'HydroMxi_[N-m]',  'HydroMzi_[N-m]']
