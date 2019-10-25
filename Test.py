@@ -1,3 +1,4 @@
+from __future__ import print_function
 import numpy as np
 import weio
 import sys
@@ -8,6 +9,10 @@ def compare_df(df_ref,df_cur,precision=1.e-3):
 
     SensorFailed=[]
     nOK=0
+
+    if len(df_ref)!=len(df_cur):
+        raise Exception('Different number of time steps. Current: {:d}, Reference:{:d}'.format(len(df_cur),len(df_ref)))
+
     for c in df_ref.columns.values:
         if c not in df_cur.columns.values:
             print('[WARN] Sensor missing in current version:',c)
@@ -39,8 +44,11 @@ def compare_df(df_ref,df_cur,precision=1.e-3):
             
     if len(SensorFailed)==0:
         print('[ OK ] {}/{} sensors passed'.format(nOK,len(df_ref.columns.values)))
+        return True
+        
     else:
         print('[FAIL] {}/{} sensors passed'.format(nOK,len(df_ref.columns.values)))
+        return False
 
 
 
@@ -59,7 +67,14 @@ if __name__=='__main__':
     else:
         precision=1.e-3
 
+    print('Comparing: ',file_cur)
+    print('  against: ',file_ref)
+
     df_ref = weio.read(file_ref).toDataFrame()
     df_cur = weio.read(file_cur).toDataFrame()
 
-    compare_df(df_ref,df_cur,precision)
+    OK =compare_df(df_ref,df_cur,precision)
+    if OK:
+        sys.exit(0)
+    else :
+        sys.exit(1)

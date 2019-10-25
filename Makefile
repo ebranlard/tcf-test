@@ -20,7 +20,7 @@ run-%:
 
 test-%:
 	@echo "------------------------- TEST $* ----------------------------------"
-	@python Test.py $*/Main_$*_ref.$(EXT) $*/Main_$*_ref.$(EXT) && { echo ""; } || { echo "Fail $*">> $(FAILFILE); }
+	@python Test.py $*/Main_$*_ref.$(EXT) $*/Main_$*.$(EXT) && { echo ""; } || { echo "Fail $*">> $(FAILFILE); }
 
 summary:
 	@echo "------------------------- SUMMARY ----------------------------------"
