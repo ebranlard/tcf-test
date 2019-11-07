@@ -71,7 +71,7 @@ if __name__=='__main__':
     if len(sys.argv)==4:
         precision=sys.argv[3]
     else:
-        precision=5.e-2
+        precision=1.e-3
 
     print('Comparing: ',file_cur)
     print('  against: ',file_ref)
