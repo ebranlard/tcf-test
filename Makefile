@@ -5,9 +5,9 @@ CASESNEW= Bipod_Decay_Pretension
 RULESNEW= $(foreach case,$(CASESNEW), run-$(case) )
 
 CASES= Bipod_Decay_Pretension Simple_Tripod_Decay Monopile_Decay OC4_Jacket_Decay
-CASES= Bipod_Decay  Simple_Tripod_Decay  Monopile_Decay  OC4_Jacket_Decay
+CASES= Bipod_Decay_Pretension   Bipod_Decay  Simple_Tripod_Decay  Monopile_Decay  OC4_Jacket_Decay
 # CASES= OC4_Jacket_Decay
-# CASES= Bipod_Decay_Pretension
+CASES= Bipod_Decay_Pretension  Bipod_Decay
 # CASES= Simple_Tripod_Decay
 RULES= $(foreach case,$(CASES), run-$(case) test-$(case))
 
