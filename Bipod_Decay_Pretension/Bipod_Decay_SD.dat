@@ -1,7 +1,7 @@
 ----------- SubDyn v1.01.x MultiMember Support Structure Input File ------------
 OC4 'Jacket' SubStructure Input File. The grouted connection is simulated with an equivalent tubular beam of enhanced properties. RRD 10/15/2013
 -------------------------- SIMULATION CONTROL  ---------------------------------
-TRUE            Echo        - Echo input data to "<rootname>.SD.ech" (flag)
+False            Echo        - Echo input data to "<rootname>.SD.ech" (flag)
 "DEFAULT"        SDdeltaT    - Local Integration Step. If "default", the glue-code integration step will be used.
              3   IntMethod   - Integration Method [1/2/3/4 = RK4/AB4/ABM4/AM2].
 True             SttcSolve   - Solve dynamics about static equilibrium point
@@ -22,15 +22,15 @@ JointID          JointXss               JointYss               JointZss JointTyp
    5              6.00000                0.00000              -50.00000  1 0.0 0.0 0.0 0.0 0.0 
 ------------------- BASE REACTION JOINTS: 1/0 for Locked/Free DOF @ each Reaction Node ---------------------
               2   NReact      - Number of Joints with reaction forces; be sure to remove all rigid motion DOFs of the structure  (else det([K])=[0])
-RJointID   RctTDXss    RctTDYss    RctTDZss    RctRDXss    RctRDYss    RctRDZss     [Global Coordinate System]
-  (-)       (flag)      (flag)      (flag)      (flag)      (flag)      (flag)
-  4           1           1           1           1           1           1        "Soil.txt"
-  5           1           1           1           1           1           1        "Soil.txt"
+RJointID  
+  (-)     
+  4       
+  5       
 ------- INTERFACE JOINTS: 1/0 for Locked (to the TP)/Free DOF @each Interface Joint (only Locked-to-TP implemented thus far (=rigid TP)) ---------
-             1   NInterf     - Number of interface joints locked to the Transition Piece (TP):  be sure to remove all rigid motion dofs
-IJointID   ItfTDXss    ItfTDYss    ItfTDZss    ItfRDXss    ItfRDYss    ItfRDZss     [Global Coordinate System]
-  (-)       (flag)      (flag)      (flag)      (flag)      (flag)      (flag)
-   1           1           1           1           1           1           1
+             2   NInterf     - Number of interface joints locked to the Transition Piece (TP):  be sure to remove all rigid motion dofs
+IJointID 
+  (-)    
+   1     
 ----------------------------------- MEMBERS --------------------------------------
            5   NMembers    - Number of frame members
 MemberID   MJointID1   MJointID2 MPropSetID1  MPropSetID2  MType      COSMID
