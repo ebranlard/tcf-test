@@ -27,7 +27,7 @@ RJointID
   4       
   5       
 ------- INTERFACE JOINTS: 1/0 for Locked (to the TP)/Free DOF @each Interface Joint (only Locked-to-TP implemented thus far (=rigid TP)) ---------
-             2   NInterf     - Number of interface joints locked to the Transition Piece (TP):  be sure to remove all rigid motion dofs
+             1   NInterf     - Number of interface joints locked to the Transition Piece (TP):  be sure to remove all rigid motion dofs
 IJointID 
   (-)    
    1     
