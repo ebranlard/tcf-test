@@ -5,6 +5,15 @@ import sys
 
 BadSignals=['PtfmRoll_[deg]', 'PtfmYaw_[deg]', 'HydroMzi_[N-m]']
 
+class bcolors:
+    HEADER = '\033[95m'
+    OKBLUE = '\033[94m'
+    OKGREEN = '\033[92m'
+    WARNING = '\033[93m'
+    FAIL = '\033[91m'
+    ENDC = '\033[0m'
+    BOLD = '\033[1m'
+    UNDERLINE = '\033[4m'
 
 def compare_df(df_ref,df_cur,precision=1.e-3):
 
@@ -50,8 +59,43 @@ def compare_df(df_ref,df_cur,precision=1.e-3):
                 nOK+=1
             
     if len(SensorFailed)==0:
+        # Font: Dot Matrix
+        print(bcolors.OKGREEN +"""
+
+
+
+                    _  _  _  _         _           _                               
+                  _(_)(_)(_)(_)_      (_)       _ (_)                              
+                 (_)          (_)     (_)    _ (_)                                 
+                 (_)          (_)     (_) _ (_)                                    
+                 (_)          (_)     (_)(_) _                                     
+                 (_)          (_)     (_)   (_) _                                  
+                 (_)_  _  _  _(_)     (_)      (_) _                               
+                   (_)(_)(_)(_)       (_)         (_)                              
+                                                                                                  
+                                                                                                  
+                                                                                              
+                        
+                """+bcolors.ENDC)
         print('[ OK ] {}/{} sensors passed'.format(nOK,len(df_ref.columns.values)))
     else:
+        print(bcolors.FAIL+"""
+                           
+                           
+                                                                                    
+    _  _  _  _  _              _                 _  _  _           _             
+   (_)(_)(_)(_)(_)           _(_)_              (_)(_)(_)         (_)            
+   (_)                     _(_) (_)_               (_)            (_)            
+   (_) _  _              _(_)     (_)_             (_)            (_)            
+   (_)(_)(_)            (_) _  _  _ (_)            (_)            (_)            
+   (_)                  (_)(_)(_)(_)(_)            (_)            (_)            
+   (_)                  (_)         (_)          _ (_) _          (_) _  _  _  _ 
+   (_)                  (_)         (_)         (_)(_)(_)         (_)(_)(_)(_)(_)
+                                                                                    
+                                                                                    
+                                                                                    
+                                            
+        """+bcolors.ENDC)        
         print('[FAIL] {}/{} sensors passed'.format(nOK,len(df_ref.columns.values)))
     if len(SensorSkipped)>0:
         print('[WARN] {}/{} sensors skipped'.format(len(SensorSkipped),len(df_ref.columns.values)))

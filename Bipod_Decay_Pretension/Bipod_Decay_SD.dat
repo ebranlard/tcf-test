@@ -24,13 +24,13 @@ JointID          JointXss               JointYss               JointZss JointTyp
               2   NReact      - Number of Joints with reaction forces; be sure to remove all rigid motion DOFs of the structure  (else det([K])=[0])
 RJointID  
   (-)     
-  4       
-  5       
+  4    
+  5       1          1           1           1           1           1         "SoilMatrix.txt"
 ------- INTERFACE JOINTS: 1/0 for Locked (to the TP)/Free DOF @each Interface Joint (only Locked-to-TP implemented thus far (=rigid TP)) ---------
              1   NInterf     - Number of interface joints locked to the Transition Piece (TP):  be sure to remove all rigid motion dofs
 IJointID 
   (-)    
-   1     
+   1 
 ----------------------------------- MEMBERS --------------------------------------
            5   NMembers    - Number of frame members
 MemberID   MJointID1   MJointID2 MPropSetID1  MPropSetID2  MType      COSMID
