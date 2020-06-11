@@ -3,7 +3,7 @@ FAST Certification Test #19: NREL 5.0 MW Baseline Wind Turbine with OC3 Monopile
 ---------------------- SIMULATION CONTROL --------------------------------------
 True          Echo            - Echo input data to <RootName>.ech (flag)
 "FATAL"       AbortLevel      - Error level when simulation should abort (string) {"WARNING", "SEVERE", "FATAL"}
-        0.1   TMax            - Total run time (s)
+         1   TMax            - Total run time (s)
 0.0000125 DT             - Recommended module time step (s)
           1   InterpOrder     - Interpolation order for input/output time history (-) {1=linear, 2=quadratic}
 1         0   NumCrctn        - Number of correction iterations (-) {0=explicit calculation, i.e., no corrections}
@@ -13,7 +13,7 @@ True          Echo            - Echo input data to <RootName>.ech (flag)
           1   CompElast       - Compute structural dynamics (switch) {1=ElastoDyn; 2=ElastoDyn + BeamDyn for blades}
           1   CompInflow      - Compute inflow wind velocities (switch) {0=still air; 1=InflowWind; 2=external from OpenFOAM}
           2   CompAero        - Compute aerodynamic loads (switch) {0=None; 1=AeroDyn v14; 2=AeroDyn v15}
-          0   CompServo       - Compute control and electrical-drive dynamics (switch) {0=None; 1=ServoDyn}
+          1   CompServo       - Compute control and electrical-drive dynamics (switch) {0=None; 1=ServoDyn}
           1   CompHydro       - Compute hydrodynamic loads (switch) {0=None; 1=HydroDyn}
           1   CompSub         - Compute sub-structural dynamics (switch) {0=None; 1=SubDyn; 2=External Platform MCKF}
           0   CompMooring     - Compute mooring system (switch) {0=None; 1=MAP++; 2=FEAMooring; 3=MoorDyn; 4=OrcaFlex}
@@ -36,7 +36,7 @@ True          Echo            - Echo input data to <RootName>.ech (flag)
 True          SumPrint        - Print summary data to "<RootName>.sum" (flag)
           1   SttsTime        - Amount of time between screen status messages (s)
       99999   ChkptTime       - Amount of time between creating checkpoint files for potential restart (s)
-0.0000125      0.05   DT_Out          - Time step for tabular output (s) (or "default")
+0.0000125 "default"       0.05   DT_Out          - Time step for tabular output (s) (or "default")
           0   TStart          - Time to begin tabular output (s)
           3   OutFileFmt      - Format for tabular (time-marching) output file (switch) {1: text file [<RootName>.out], 2: binary file [<RootName>.outb], 3: both}
 True          TabDelim        - Use tab delimiters in text tabular output file? (flag) {uses spaces if false}
@@ -50,7 +50,7 @@ False         Linearize       - Linearization analysis (flag)
 False         LinOutJac       - Include full Jacobians in linearization output (for debug) (flag) [unused if Linearize=False; used only if LinInputs=LinOutputs=2]
 False         LinOutMod       - Write module-level linearization output files in addition to output for full system? (flag) [unused if Linearize=False]
 ---------------------- VISUALIZATION ------------------------------------------
-          0   WrVTK           - VTK visualization data output: (switch) {0=none; 1=initialization data only; 2=animation}
+          2   WrVTK           - VTK visualization data output: (switch) {0=none; 1=initialization data only; 2=animation}
           3   VTK_type        - Type of VTK visualization data: (switch) {1=surfaces; 2=basic meshes (lines/points); 3=all meshes (debug)} [unused if WrVTK=0]
 false         VTK_fields      - Write mesh fields to VTK data files? (flag) {true/false} [unused if WrVTK=0]
          20   VTK_fps         - Frame rate for VTK output (frames per second){will use closest integer multiple of DT} [used only if WrVTK=2]

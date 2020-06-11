@@ -1,5 +1,5 @@
 
-Predictions were generated on 08-May-2020 at 12:02:48 using OpenFAST, compiled as a 64-bit application using single precision at commit v2.1.0-377-g2b4e6ffa-dirty
+Predictions were generated on 08-May-2020 at 12:08:16 using OpenFAST, compiled as a 64-bit application using single precision at commit v2.1.0-377-g2b4e6ffa-dirty
  linked with  NWTC Subroutine Library; ElastoDyn; HydroDyn; SubDyn
 
 Description from the FAST input file: Bipod
