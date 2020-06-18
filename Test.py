@@ -62,8 +62,6 @@ def compare_df(df_ref,df_cur,precision=1.e-3):
         # Font: Dot Matrix
         print(bcolors.OKGREEN +"""
 
-
-
                     _  _  _  _         _           _                               
                   _(_)(_)(_)(_)_      (_)       _ (_)                              
                  (_)          (_)     (_)    _ (_)                                 
@@ -73,15 +71,11 @@ def compare_df(df_ref,df_cur,precision=1.e-3):
                  (_)_  _  _  _(_)     (_)      (_) _                               
                    (_)(_)(_)(_)       (_)         (_)                              
                                                                                                   
-                                                                                                  
-                                                                                              
                         
                 """+bcolors.ENDC)
         print('[ OK ] {}/{} sensors passed'.format(nOK,len(df_ref.columns.values)))
     else:
         print(bcolors.FAIL+"""
-                           
-                           
                                                                                     
     _  _  _  _  _              _                 _  _  _           _             
    (_)(_)(_)(_)(_)           _(_)_              (_)(_)(_)         (_)            
@@ -91,8 +85,6 @@ def compare_df(df_ref,df_cur,precision=1.e-3):
    (_)                  (_)(_)(_)(_)(_)            (_)            (_)            
    (_)                  (_)         (_)          _ (_) _          (_) _  _  _  _ 
    (_)                  (_)         (_)         (_)(_)(_)         (_)(_)(_)(_)(_)
-                                                                                    
-                                                                                    
                                                                                     
                                             
         """+bcolors.ENDC)        

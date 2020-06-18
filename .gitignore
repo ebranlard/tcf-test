@@ -1,4 +1,5 @@
 *.sum
+*.yaml
 *.ech
 *.outb
 *.out

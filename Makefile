@@ -1,32 +1,42 @@
-CASES= Bipod_Decay_Pretension Bipod_Decay Simple_Tripod_Decay Monopile_Decay Spar
+CASES=
+# --- Main tests
+CASES+= Bipod_Decay_Pretension Bipod_Decay Simple_Tripod_Decay Monopile_Decay Spar
 CASES+= Soil-SSI-Monopile Soil-SSI-Monopile-Baseline 
 CASES+= Soil-SSI-OC4_Jacket
 CASES+=OC4_Jacket_Decay OC4_Jacket_WindWave
+CASES+= Bipod_Decay_Rigid
+
+# --- Inidividual tests
+# CASES=Monopile-SoilDyn
 # CASES=Spar Soil-SSI-Monopile
-# CASES= Bipod_Decay_Pretension Bipod_Decay Simple_Tripod_Decay Monopile_Decay Spar
-# CASES= Bipod_Decay_Pretension Monopile_Decay  Bipod_Decay  Simple_Tripod_Decay   OC4_Jacket_Decay
-# CASES= Bipod_Decay_RigidInterf Bipod_Decay
-# CASES= OC4_Jacket_Decay_RigidInterf OC4_Jacket_Decay
-# CASES= Bipod_Decay_Rigid
 # CASES= Bipod_Decay
-# CASES= Bipod_Decay_Pretension 
+# CASES+= Bipod_Decay_Pretension 
 # CASES= Bipod_Decay Monopile_Decay
-# CASES= Bipod_Decay_Ball
-# CASES= Bipod_Decay_Pin
-# CASES= Bipod_Decay_Universal
 # CASES= OC4_Jacket_Decay
-# CASES= OC4_Jacket_Decay_RigidInterf
 # CASES= OC4_Jacket_WindWave
+# CASES+= Soil-SSI-OC4_Jacket
 # CASES=Spar
 # CASES = Bipod_Decay
 # CASES= Simple_Tripod_Decay
 # CASES= Monopile_Decay
+# --- TODO NEW
+# CASES= OC4_Jacket_Decay_RigidInterf
+# CASES= Bipod_Decay_RigidInterf 
 # CASES = SeaBedMoment
 # CASES = Bug_Static
+# CASES= Bipod_Decay_Ball
+# CASES= Bipod_Decay_Pin
+# CASES= Bipod_Decay_Universal
+# CASES= Monopile_WavesTopMass
+# CASES+= OC4_Jacket_WindWave
+# CASES+= Soil-SSI-OC4_Jacket
+# CASES+= Soil-SSI-OC4_Jacket_DEBUG
+# CASES= Monopile-SoilDyn-Simple
 RULES= $(foreach case,$(CASES), run-$(case) test-$(case))
 
 CASES_DRIVER=
 CASES_DRIVER+=Driver_Test_Cable
+CASES_DRIVER+=Driver_Test_Rigid
 
 DRIVER_FILES= $(foreach case, $(CASES_DRIVER), $(wildcard $(case)/*.dvr) )
 DRIVER_RULES= $(foreach dvr, $(DRIVER_FILES), $(dvr)run $(dvr)test)
