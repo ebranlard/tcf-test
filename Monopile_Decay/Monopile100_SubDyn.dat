@@ -11,7 +11,16 @@ True             ExtraMoment - Include extra moment from lever arm at interface 
             10   NDiv        - Number of sub-elements per member
 True             CBMod       - [T/F] If True perform C-B reduction, else full FEM dofs will be retained. If True, select Nmodes to retain in C-B reduced system.
              2   Nmodes      - Number of internal modes to retain (ignored if CBMod=False). If Nmodes=0 --> Guyan Reduction.
-            10  JDampings   - Damping Ratios for each retained mode (% of critical) If Nmodes>0, list Nmodes structural damping ratios for each retained mode (% of critical), or a single damping ratio to be applied to all retained modes. (last entered value will be used for all remaining modes).
+             1   JDampings   - Damping Ratios for each retained mode (% of critical) If Nmodes>0, list Nmodes structural damping ratios for each retained mode (% of critical), or a single damping ratio to be applied to all retained modes. (last entered value will be used for all remaining modes).
+             2   GuyanDampMod - Guyan damping [0=none, 1=Rayleigh Damping, 2= user specified 6x6 matrix]
+  0.000, 0.003835059  RayleighDamp - TUNED to get zeta=0.01 at f=0.83, Mass and stiffness proportional damping  coefficients (Rayleigh Damping) [only if GuyanDampMod=1]
+Guyan damping matrix (6x6) [only if GuyanDampMod=2] ! TUNED to get zeta=0.01 at f=0.83
+  0.858307031E+05 0.000000000E+00 0.000000000E+00 0.000000000E+00 -.429844700E+07 0.000000000E+00
+  0.000000000E+00 0.858307031E+05 0.000000000E+00 0.429807000E+07 0.000000000E+00 0.000000000E+00
+  0.000000000E+00 0.000000000E+00 0.905724400E+07 0.000000000E+00 0.000000000E+00 0.000000000E+00
+  0.000000000E+00 0.429681350E+07 0.000000000E+00 0.286566496E+09 0.000000000E+00 0.000000000E+00
+  -.429706450E+07 0.000000000E+00 0.000000000E+00 0.000000000E+00 0.286579552E+09 0.000000000E+00
+  0.000000000E+00 0.000000000E+00 0.000000000E+00 0.000000000E+00 0.000000000E+00 0.541107320E+08
 ---- STRUCTURE JOINTS: joints connect structure members (~Hydrodyn Input File)---
              3   NJoints     - Number of joints (-)
 JointID          JointXss               JointYss               JointZss  [Coordinates of Member joints in SS-Coordinate System]
