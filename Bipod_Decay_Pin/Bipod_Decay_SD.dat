@@ -14,13 +14,13 @@ True             CBMod       - [T/F] If True perform C-B reduction, else full FE
 1,1,0.94, 1, 1, 1.16, 1.29, 1.35, 1.36, 1.36, 1.49, 1.54, 1.74, 1.77, 1.77, 1.89, 1.95, 1.95, 1.97, 2.03, 2.07, 2.11, 2.11, 2.3, 2.55   JDampings   - Damping Ratios for each retained mode (% of critical) If Nmodes>0, list Nmodes structural damping ratios for each retained mode (% of critical), or a single damping ratio to be applied to all retained modes. (last entered value will be used for all remaining modes).
 ---- STRUCTURE JOINTS: joints connect structure members (~Hydrodyn Input File)---
             5  NJoints     - Number of joints (-)
-JointID          JointXss               JointYss               JointZss JointType JointDirX JointDirY JointDirZ JointStiff JointDamp
-  (-)               (m)                    (m)                    (m)    (-)        (-)       (-)        (-)     (Nm/rad) (Nm/rad.s)
-   1              0.00000                0.00000               20.00000  1         0.0        0.0        0.0        0.0        0.0 
-   2             -1.71000                0.00000                0.00000  1         0.0        0.0        0.0        0.0        0.0 
-   3              1.71000                0.00000                0.00000  3         0.0        1.0        0.0       12.0       15.0 
-   4             -6.00000                0.00000              -50.00000  1         0.0        0.0        0.0        0.0        0.0 
-   5              6.00000                0.00000              -50.00000  1         0.0        0.0        0.0        0.0        0.0 
+JointID          JointXss               JointYss               JointZss JointType JointDirX JointDirY JointDirZ JointStiff
+  (-)               (m)                    (m)                    (m)    (-)        (-)       (-)        (-)     (Nm/rad) 
+   1              0.00000                0.00000               20.00000  1         0.0        0.0        0.0        0.0   
+   2             -1.71000                0.00000                0.00000  1         0.0        0.0        0.0        0.0   
+   3              1.71000                0.00000                0.00000  3         0.0        1.0        0.0       12.0   
+   4             -6.00000                0.00000              -50.00000  1         0.0        0.0        0.0        0.0   
+   5              6.00000                0.00000              -50.00000  1         0.0        0.0        0.0        0.0   
 ------------------- BASE REACTION JOINTS: 1/0 for Locked/Free DOF @ each Reaction Node ---------------------
               2   NReact      - Number of Joints with reaction forces; be sure to remove all rigid motion DOFs of the structure  (else det([K])=[0])
 RJointID   RctTDXss    RctTDYss    RctTDZss    RctRDXss    RctRDYss    RctRDZss     [Global Coordinate System]

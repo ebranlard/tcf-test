@@ -13,12 +13,12 @@ True             CBMod       - [T/F] If True perform C-B reduction, else full FE
              1   JDampings   - Damping Ratios for each retained mode (% of critical) If Nmodes>0, list Nmodes structural damping ratios for each retained mode (% of critical), or a single damping ratio to be applied to all retained modes. (last entered value will be used for all remaining modes).
 ---- STRUCTURE JOINTS: joints connect structure members (~Hydrodyn Input File)---
              4   NJoints     - Number of joints (-)
-JointID          JointXss               JointYss               JointZss JointType JointDirX  JointDirY JointDirZ 	JointStiff 	JointDamp
-  (-)               (m)                    (m)                    (m)      (-) 		 (-) 		(-) 	  (-) 		  (Nm/rad) 	(Nm/rad.s)
-   1              0.00000                0.00000                0.00000  	1 		 0.0 		0.0 	  0.0 			0.0 	   0.0 
-   2              0.00000                0.00000               10.00000  	1 		 0.0 		0.0 	  0.0 			0.0 	   0.0 
-   3              0.00000                0.00000               20.00000  	1 		 0.0 		0.0 	  0.0 			0.0 	   0.0  
-   4              0.00000                0.00000               30.00000  	1 		 0.0 		0.0 	  0.0 			0.0 	   0.0  
+JointID          JointXss               JointYss               JointZss JointType JointDirX  JointDirY JointDirZ 	JointStiff 	
+  (-)               (m)                    (m)                    (m)      (-) 		 (-) 		(-) 	  (-) 		  (Nm/rad) 	
+   1              0.00000                0.00000                0.00000  	1 		 0.0 		0.0 	  0.0 			0.0 	
+   2              0.00000                0.00000               10.00000  	1 		 0.0 		0.0 	  0.0 			0.0 	
+   3              0.00000                0.00000               20.00000  	1 		 0.0 		0.0 	  0.0 			0.0 	
+   4              0.00000                0.00000               30.00000  	1 		 0.0 		0.0 	  0.0 			0.0 
 ------------------- BASE REACTION JOINTS: 1/0 for Locked/Free DOF @ each Reaction Node ---------------------
              1   NReact      - Number of Joints with reaction forces; be sure to remove all rigid motion DOFs of the structure  (else det([K])=[0])
 RJointID   RctTDXss    RctTDYss    RctTDZss    RctRDXss    RctRDYss    RctRDZss     [Global Coordinate System]
