@@ -23,13 +23,13 @@ JointID          JointXss               JointYss               JointZss JointTyp
               2   NReact      - Number of Joints with reaction forces; be sure to remove all rigid motion DOFs of the structure  (else det([K])=[0])
 RJointID  
   (-)     
-   2       
-   6       
+   2      1 1 1 1 1 1 
+   6      1 1 1 1 1 1 
 ------- INTERFACE JOINTS: 1/0 for Locked (to the TP)/Free DOF @each Interface Joint (only Locked-to-TP implemented thus far (=rigid TP)) ---------
              1   NInterf     - Number of interface joints locked to the Transition Piece (TP):  be sure to remove all rigid motion dofs
 IJointID 
   (-)    
-   4     
+   4    1 1 1 1 1 1 
 ----------------------------------- MEMBERS --------------------------------------
            2   NMembers    - Number of frame members
 MemberID   MJointID1   MJointID2 MPropSetID1  MPropSetID2  MType      COSMID
@@ -47,10 +47,10 @@ PropSetID     YoungE          ShearG          MatDens          XsecA          Xs
   (-)         (N/m2)          (N/m2)          (kg/m3)          (m2)            (m2)          (m2)          (m4)          (m4)          (m4)
 -------------------------- CABLE PROPERTIES  -------------------------------------
              2   NCablePropSets   - Number of cable cable properties
-PropSetID     EA          MatDens        T0 
-  (-)         (TODO)      (kg/m)        (N) 
-   2          210E7      7850.00        1E7
-   3          420E7      7850.00        1E7   
+PropSetID     EA          MatDens        T0     CtrlChannel
+  (-)         (N)         (kg/m)        (N)         (-)
+   2          210E7      7850.00        1E7          0
+   3          420E7      7850.00        1E7          0
 ----------------------- RIGID LINK PROPERTIES ------------------------------------
              0   NRigidPropSets - Number of rigid link properties
 PropSetID   MatDens   
