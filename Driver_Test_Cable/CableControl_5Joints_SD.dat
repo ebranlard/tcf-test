@@ -63,7 +63,7 @@ PropSetID     YoungE          ShearG          MatDens          XsecA          Xs
 PropSetID     EA          MatDens      DeltaL<0   CtrlChannel (DeltaL, DeltaLdot)
   (-)         (N)         (kg/m)        (m)        (-)
    2          210E7      7850.00        1E7         0
-   3          420E7      7850.00        1E7         0
+   3          420E7      7850.00        1E7         1 (2 variables, but SuybDyn only uses DeltaL)
 ----------------------- RIGID LINK PROPERTIES ------------------------------------
              0   NRigidPropSets - Number of rigid link properties
 PropSetID   MatDens   

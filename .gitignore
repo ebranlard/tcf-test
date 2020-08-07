@@ -8,5 +8,12 @@ vtk
 *.vtk
 *.dll 
 *.exe
+*.lin
+*.csv
+*.png
+CMakeCache.txt
+CMakeFiles
+cmake_install.cmake
 openfast*
+subdyn_driver
 FAIL
