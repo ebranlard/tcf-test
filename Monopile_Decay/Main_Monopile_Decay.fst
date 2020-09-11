@@ -41,6 +41,12 @@ True          TabDelim        - Use tab delimiters in text tabular output file? 
 "ES10.3E2"    OutFmt          - Format used for text tabular output, excluding the time channel.  Resulting field should be 10 characters. (quoted string)
 ---------------------- LINEARIZATION -------------------------------------------
 True         Linearize       - Linearization analysis (flag)
+False         CalcSteady    - Calculate a steady-state periodic operating point before linearization (-) (switch)
+2             TrimCase - Controller parameter to be trimmed {1:yaw; 2:torque; 3:pitch} [used only when CalcSteady=True]
+0.0001        TrimTol - Tolerance for the rotational speed convergence [>eps] [used only when CalcSteady=True]
+0.001         TrimGain - Proportional gain for the rotational speed error (rad/(rad/s) or Nm/(rad/s)) [>0] [used only when CalcSteady=True]
+0.0           Twr_Kdmp - Damping factor for the tower (N/(m/s)) [>=0] [used only when CalcSteady=True]
+0.0           Bld_Kdmp - Damping factor for the blade (N/(m/s)) [>=0] [used only when CalcSteady=True]
           2   NLinTimes       - Number of times to linearize (-) [>=1] [unused if Linearize=False]
      0,  5    LinTimes        - List of times at which to linearize (s) [1 to NLinTimes] [unused if Linearize=False]
           2   LinInputs       - Inputs included in linearization (switch) {0=none; 1=standard; 2=all module inputs (debug)} [unused if Linearize=False]
