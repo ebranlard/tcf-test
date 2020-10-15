@@ -47,10 +47,10 @@ PropSetID     YoungE          ShearG          MatDens          XsecA          Xs
   (-)         (N/m2)          (N/m2)          (kg/m3)          (m2)            (m2)          (m2)          (m4)          (m4)          (m4)
 -------------------------- CABLE PROPERTIES  -------------------------------------
              2   NCablePropSets   - Number of cable cable properties
-PropSetID     EA          MatDens        T0     CtrlChannel
-  (-)         (N)         (kg/m)        (N)         (-)
-   2          210E7      7850.00        1E7          0
-   3          420E7      7850.00        1E7          0
+PropSetID     EA          MatDens       T0   CtrlChannel
+  (-)         (N)         (kg/m)        (N)     (-)
+   2          210E7      7850.00        1e7      0
+   3          420E7      7850.00        1e7      0
 ----------------------- RIGID LINK PROPERTIES ------------------------------------
              0   NRigidPropSets - Number of rigid link properties
 PropSetID   MatDens   

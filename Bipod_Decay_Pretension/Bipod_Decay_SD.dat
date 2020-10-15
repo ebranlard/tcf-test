@@ -12,6 +12,15 @@ True             ExtraMoment - Include extra moment from lever arm at interface 
 True             CBMod       - [T/F] If True perform C-B reduction, else full FEM dofs will be retained. If True, select Nmodes to retain in C-B reduced system.
              0    Nmodes      - Number of internal modes to retain (ignored if CBMod=False). If Nmodes=0 --> Guyan Reduction.
 1,1,0.94, 1, 1, 1.16, 1.29, 1.35, 1.36, 1.36, 1.49, 1.54, 1.74, 1.77, 1.77, 1.89, 1.95, 1.95, 1.97, 2.03, 2.07, 2.11, 2.11, 2.3, 2.55   JDampings   - Damping Ratios for each retained mode (% of critical) If Nmodes>0, list Nmodes structural damping ratios for each retained mode (% of critical), or a single damping ratio to be applied to all retained modes. (last entered value will be used for all remaining modes).
+             0   GuyanDampMod - Guyan damping [0=none, 1=Rayleigh Damping, 2= user specified 6x6 matrix]
+0.000, 0.00 RayleighDamp - TUNED to get zeta=0.01 at f=0.83, Mass and stiffness proportional damping  coefficients (Rayleigh Damping) [only if GuyanDampMod=1]
+             6   GuyanDampSize  - Guyan damping matrix (6x6) [only if GuyanDampMod=2] 
+  0.000000000E+00   0.000000000E+00   0.000000000E+00   0.000000000E+00   0.000000000E+00   0.0000000E+00
+  0.000000000E+00   0.000000000E+00   0.000000000E+00   0.000000000E+00   0.000000000E+00   0.0000000E+00
+  0.000000000E+00   0.000000000E+00   0.000000000E+00   0.000000000E+00   0.000000000E+00   0.0000000E+00
+  0.000000000E+00   0.000000000E+00   0.000000000E+00   0.000000000E+00   0.000000000E+00   0.0000000E+00
+  0.000000000E+00   0.000000000E+00   0.000000000E+00   0.000000000E+00   0.000000000E+00   0.0000000E+00
+  0.000000000E+00   0.000000000E+00   0.000000000E+00   0.000000000E+00   0.000000000E+00   0.0000000E+00
 ---- STRUCTURE JOINTS: joints connect structure members (~Hydrodyn Input File)---
             5  NJoints     - Number of joints (-)
 JointID          JointXss               JointYss               JointZss JointType JointDirX JointDirY JointDirZ JointStiff 
@@ -25,7 +34,7 @@ JointID          JointXss               JointYss               JointZss JointTyp
               2   NReact      - Number of Joints with reaction forces; be sure to remove all rigid motion DOFs of the structure  (else det([K])=[0])
 RJointID  
   (-)     
-  4    
+  4       1          1           1           1           1           1         ""
   5       1          1           1           1           1           1         "SoilMatrix.txt"
 ------- INTERFACE JOINTS: 1/0 for Locked (to the TP)/Free DOF @each Interface Joint (only Locked-to-TP implemented thus far (=rigid TP)) ---------
              1   NInterf     - Number of interface joints locked to the Transition Piece (TP):  be sure to remove all rigid motion dofs
@@ -52,9 +61,9 @@ PropSetID     YoungE          ShearG          MatDens          XsecA          Xs
   (-)         (N/m2)          (N/m2)          (kg/m3)          (m2)            (m2)          (m2)          (m4)          (m4)          (m4)
 -------------------------- CABLE PROPERTIES  -------------------------------------
              1   NCablePropSets   - Number of cable cable properties
-PropSetID     EA          MatDens        T0 
-  (-)         (TODO)      (kg/m)        (N) 
-   10       2.10000e+11   7850.00      2.0E+11
+PropSetID     EA          MatDens        T0    CtrlChannel
+  (-)         (N)         (kg/m)        (N)        (-)
+   10       2.10000e+11   7850.00      2.0E+11      0
 ----------------------- RIGID LINK PROPERTIES ------------------------------------
              1   NRigidPropSets - Number of rigid link properties
 PropSetID   MatDens   

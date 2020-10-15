@@ -31,6 +31,10 @@ def compare_df(df_ref,df_cur,precision=1.e-3):
             x0=df_ref[c].values
             x1=df_cur[c].values
             ma_ref=np.mean(np.abs(x0))
+            min_val =np.min(x0)
+            # We don't want to cross zero
+            #x0=x0+min_val
+            #x1=x1+min_val
 
 
             if ma_ref<1e-5:

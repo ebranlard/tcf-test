@@ -43,12 +43,12 @@ IJointID
    4    1 1 1 1 1 1 
 ----------------------------------- MEMBERS --------------------------------------
            4   NMembers    - Number of frame members
-MemberID   MJointID1   MJointID2 MPropSetID1  MPropSetID2  MType      COSMID
-  (-)         (-)         (-)      (-)         (-)         (-)        (-)
-   2           2           3        2           2           2      
-   3           3           4        1           1           1      
-   4           4           5        1           1           1      
-   5           5           6        3           3           2      
+MemberID   MJointID1   MJointID2 MPropSetID1  MPropSetID2  MType  COSMID
+  (-)         (-)         (-)      (-)         (-)         (-)    (-)
+  12           2           3       12          12           2     
+   3           3           4        1           1           1     
+   4           4           5        1           1           1     
+  25           5           6       43          43           2     
 ------------------ MEMBER X-SECTION PROPERTY data 1/2 [isotropic material for now: use this table for circular-tubular elements] ------------------------
              1   NPropSets   - Number of structurally unique x-sections (i.e. how many groups of X-sectional properties are utilized throughout all of the members)
 PropSetID     YoungE          ShearG          MatDens          XsecD           XsecT
@@ -60,10 +60,10 @@ PropSetID     YoungE          ShearG          MatDens          XsecA          Xs
   (-)         (N/m2)          (N/m2)          (kg/m3)          (m2)            (m2)          (m2)          (m4)          (m4)          (m4)
 -------------------------- CABLE PROPERTIES  -------------------------------------
              2   NCablePropSets   - Number of cable properties
-PropSetID     EA          MatDens      DeltaL<0   CtrlChannel (DeltaL, DeltaLdot)
-  (-)         (N)         (kg/m)        (m)        (-)
-   2          210E7      7850.00        1E7         0
-   3          420E7      7850.00        1E7         0
+PropSetID     EA          MatDens      T0<0   CtrlChannel (DeltaL)
+  (-)         (N)         (kg/m)        (N)        (-)
+  12          210E7      7850.00        1E7         0
+  43          420E7      7850.00        1E7         0
 ----------------------- RIGID LINK PROPERTIES ------------------------------------
              0   NRigidPropSets - Number of rigid link properties
 PropSetID   MatDens   
@@ -89,10 +89,10 @@ True             TabDelim    - Generate a tab-delimited output in the <rootname>
              4   NMOutputs   - Number of members whose forces/displacements/velocities/accelerations will be output (-) [Must be <= 9].
 MemberID   NOutCnt    NodeCnt [NOutCnt=how many nodes to get output for [< 10]; NodeCnt are local ordinal numbers from the start of the member, and must be >=1 and <= NDiv+1] If NMOutputs=0 leave blank as well.
   (-)        (-)        (-)
-   2          2          1      2
+  12          2          1      2
    3          2          1      2
    4          2          1      2
-   5          2          1      2
+  25          2          1      2
 ------------------------- SSOutList: The next line(s) contains a list of output parameters that will be output in <rootname>.SD.out or <rootname>.out. ------
 "M1N1FKze"    - Static component of action force. Note that Z is the axial direction in the local member coordinate system.
 "M1N2FKze"    - Static component of action force. Note that Z is the axial direction in the local member coordinate system.

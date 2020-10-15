@@ -102,6 +102,18 @@ MemberID   NOutCnt    NodeCnt [NOutCnt=how many nodes to get output for [< 10]; 
 "M2N2RDxe"           - 1st Member, 1st node cnt (node 1 in the system): displacements in inertial frame coordinate system (global system).
 "M2N2RDye"           - 1st Member, 1st node cnt (node 1 in the system): displacements in inertial frame coordinate system (global system).
 "M2N2RDze"           - 1st Member, 1st node cnt (node 1 in the system): displacements in inertial frame coordinate system (global system).
+"IntfTDXss"   - X-displacement at the interface
+"IntfTDYss"   - X-displacement at the interface
+"IntfTDZss"   - X-displacement at the interface
+"IntfRDXss"   - X-displacement at the interface
+"IntfRDYss"   - X-displacement at the interface
+"IntfRDZss"   - X-displacement at the interface
+"IntfFXss"   - X-displacement at the interface
+"IntfFYss"   - X-displacement at the interface
+"IntfFZss"   - X-displacement at the interface
+"IntfMXss"   - X-displacement at the interface
+"IntfMYss"   - X-displacement at the interface
+"IntfMZss"   - X-displacement at the interface
 "ReactFXss"
 "ReactFYss"
 "ReactFZss"

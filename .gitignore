@@ -17,3 +17,5 @@ cmake_install.cmake
 openfast*
 subdyn_driver
 FAIL
+_*
+!__init__.py

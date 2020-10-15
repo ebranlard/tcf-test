@@ -2,7 +2,7 @@ SubDyn Driver file for stand-alone applications
 Compatible with SubDyn v1.xx.x
 False              Echo           - Echo the input file data (flag). In order to write down the driver used for tracking purposes. The name will be according to OutRootName. For example: SubDyn_outputs.dvr.echo
 ---------------------- ENVIRONMENTAL CONDITIONS -------------------------------------------------
-0                  Gravity        - Gravity (m/s^2).
+0                 Gravity        - Gravity (m/s^2).
 0                  WtrDpth        - Water Depth (m) positive value.
 ---------------------- SubDyn -------------------------------------------------------------------
 "Pendulum.dat"   SDInputFile - It can be an absolute or relative path.  
