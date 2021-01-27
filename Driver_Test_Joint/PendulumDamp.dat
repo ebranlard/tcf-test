@@ -85,23 +85,59 @@ MemberID   NOutCnt    NodeCnt [NOutCnt=how many nodes to get output for [< 10]; 
    2          2          1 2 
 ------------------------- SSOutList: The next line(s) contains a list of output parameters that will be output in <rootname>.SD.out or <rootname>.out. ------ 
 "M1N1TDxss"           - 1st Member, 1st node cnt (node 1 in the system): displacements in inertial frame coordinate system (global system).
-"M1N2TDxss"           - 1st Member, 1st node cnt (node 1 in the system): displacements in inertial frame coordinate system (global system).
-"M2N1TDxss"           - 2nd node cnt (node 3 in the system): displacements in inertial frame coordinate system (global system).
-"M2N2TDxss"           - 1st Member, 1st node cnt (node 1 in the system): displacements in inertial frame coordinate system (global system).
-"M1N2TDzss"           - 1st Member, 1st node cnt (node 1 in the system): displacements in inertial frame coordinate system (global system).
-"M2N2TDzss"           - 1st Member, 1st node cnt (node 1 in the system): displacements in inertial frame coordinate system (global system).
-"M1N1RDxe"           - 1st Member, 1st node cnt (node 1 in the system): displacements in inertial frame coordinate system (global system).
-"M1N1RDye"           - 1st Member, 1st node cnt (node 1 in the system): displacements in inertial frame coordinate system (global system).
-"M1N1RDze"           - 1st Member, 1st node cnt (node 1 in the system): displacements in inertial frame coordinate system (global system).
-"M1N2RDxe"           - 1st Member, 1st node cnt (node 1 in the system): displacements in inertial frame coordinate system (global system).
-"M1N2RDye"           - 1st Member, 1st node cnt (node 1 in the system): displacements in inertial frame coordinate system (global system).
-"M1N2RDze"           - 1st Member, 1st node cnt (node 1 in the system): displacements in inertial frame coordinate system (global system).
-"M2N1RDxe"           - 1st Member, 1st node cnt (node 1 in the system): displacements in inertial frame coordinate system (global system).
-"M2N1RDye"           - 1st Member, 1st node cnt (node 1 in the system): displacements in inertial frame coordinate system (global system).
-"M2N1RDze"           - 1st Member, 1st node cnt (node 1 in the system): displacements in inertial frame coordinate system (global system).
-"M2N2RDxe"           - 1st Member, 1st node cnt (node 1 in the system): displacements in inertial frame coordinate system (global system).
-"M2N2RDye"           - 1st Member, 1st node cnt (node 1 in the system): displacements in inertial frame coordinate system (global system).
-"M2N2RDze"           - 1st Member, 1st node cnt (node 1 in the system): displacements in inertial frame coordinate system (global system).
+"M1N2TDxss"           -
+"M2N1TDxss"           -
+"M2N2TDxss"           -
+"M1N2TDzss"           -
+"M2N2TDzss"           -
+"M1N1RDxe"           - 
+"M1N1RDye"           - 
+"M1N1RDze"           - 
+"M1N2RDxe"           - 
+"M1N2RDye"           - 
+"M1N2RDze"           - 
+"M2N1RDxe"           - 
+"M2N1RDye"           - 
+"M2N1RDze"           - 
+"M2N2RDxe"           - 
+"M2N2RDye"           - 
+"M2N2RDze"           - 
+"M1N1TAxe"           - 
+"M1N1TAye"           - 
+"M1N1TAze"           - 
+"M1N2TAxe"           - 
+"M1N2TAye"           - 
+"M1N2TAze"           - 
+"M2N1TAxe"           - 
+"M2N1TAye"           - 
+"M2N1TAze"           - 
+"M2N2TAxe"           - 
+"M2N2TAye"           - 
+"M2N2TAze"           - 
+"M1N1RAxe"           - 
+"M1N1RAye"           - 
+"M1N1RAze"           - 
+"M1N2RAxe"           - 
+"M1N2RAye"           - 
+"M1N2RAze"           - 
+"M2N1RAxe"           - 
+"M2N1RAye"           - 
+"M2N1RAze"           - 
+"M2N2RAxe"           - 
+"M2N2RAye"           - 
+"M2N2RAze"           - 
+"IntfTDXss"   - X-displacement at the interface
+"IntfTDYss"   - X-displacement at the interface
+"IntfTDZss"   - X-displacement at the interface
+"IntfRDXss"   - X-displacement at the interface
+"IntfRDYss"   - X-displacement at the interface
+"IntfRDZss"   - X-displacement at the interface
+"IntfFXss"   - X-displacement at the interface
+"IntfFYss"   - X-displacement at the interface
+"IntfFZss"   - X-displacement at the interface
+"IntfMXss"   - X-displacement at the interface
+"IntfMYss"   - X-displacement at the interface
+"IntfMZss"   - X-displacement at the interface
 "ReactFXss"
 "ReactFYss"
 "ReactFZss"

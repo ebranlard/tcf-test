@@ -5,6 +5,7 @@ False            Echo        - Echo input data to "<rootname>.SD.ech" (flag)
 "DEFAULT"        SDdeltaT    - Local Integration Step. If "default", the glue-code integration step will be used.
              4   IntMethod   - Integration Method [1/2/3/4 = RK4/AB4/ABM4/AM2].
 True             SttcSolve   - Solve dynamics about static equilibrium point
+False            ExtraMoment
 -------------------- FEA and CRAIG-BAMPTON PARAMETERS---------------------------
              3   FEMMod      - FEM switch: element model in the FEM. [1= Euler-Bernoulli(E-B);  2=Tapered E-B (unavailable);  3= 2-node Timoshenko;  4= 2-node tapered Timoshenko (unavailable)]
              1   NDiv        - Number of sub-elements per member
@@ -79,6 +80,18 @@ MemberID   NOutCnt    NodeCnt [NOutCnt=how many nodes to get output for [< 10]; 
    1          2          1    2
    3          2          1    2
 ------------------------- SSOutList: The next line(s) contains a list of output parameters that will be output in <rootname>.SD.out or <rootname>.out. ------ 
+"IntfTDXss"   - X-displacement at the interface
+"IntfTDYss"   - X-displacement at the interface
+"IntfTDZss"   - X-displacement at the interface
+"IntfRDXss"   - X-displacement at the interface
+"IntfRDYss"   - X-displacement at the interface
+"IntfRDZss"   - X-displacement at the interface
+"IntfFXss"   - X-displacement at the interface
+"IntfFYss"   - X-displacement at the interface
+"IntfFZss"   - X-displacement at the interface
+"IntfMXss"   - X-displacement at the interface
+"IntfMYss"   - X-displacement at the interface
+"IntfMZss"   - X-displacement at the interface
 "M1N1TDxss,M1N1TDzss" - 1st Member, 1st node cnt (node 1 in the system): displacements in inertial frame coordinate system (global system).
 "M1N2TDxss,M1N2TDzss" - 1st Member, 2nd node cnt (node 2 in the system): displacements in inertial frame coordinate system (global system).
 "M2N1TDxss,M2N1TDzss" - 3rd Member, 1st node cnt (node 3 in the system): displacements in inertial frame coordinate system (global system).

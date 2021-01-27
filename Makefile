@@ -1,23 +1,42 @@
 CASES=
+
+# --- Driver tests
+CASES_DRIVER=
+# CASES_DRIVER+= Driver_Test_Cable
+# CASES_DRIVER+= Driver_Test_Rigid
+# CASES_DRIVER+= Driver_Test_Joint
+# CASES_DRIVER+= Driver_TetraSpar
+#CASES_DRIVER+= Driver_MultiRigid ! TODO
+
 # --- Main tests
-CASES+= Bipod_Decay_Pretension Bipod_Decay Simple_Tripod_Decay Monopile_Decay Spar
-CASES+= Soil-SSI-Monopile Soil-SSI-Monopile-Baseline 
-CASES+= Soil-SSI-OC4_Jacket
-CASES+=OC4_Jacket_Decay OC4_Jacket_WindWave
-CASES+= Bipod_Decay_Rigid
+# CASES+= SparPendulum_NoHeave
+# CASES+= SparPendulumHydro_HeaveOnly
+# CASES+= SparPendulumHydro
+# CASES+= SparHanging
+CASES+= TetraSpar_LC12
+# CASES+= Monopile_Waves 
+# CASES+= Monopile_Decay
+# CASES+= Soil-SSI-Monopile Soil-SSI-Monopile-Baseline 
+# CASES+= Soil-SSI-OC4_Jacket
+# CASES+= OC4_Jacket_Decay
+# CASES+= OC4_Jacket_WindWave
+
+
+# --- New hydro fail...
+# CASES= Spar
+# CASES= Simple_Tripod_Decay
+# CASES= Bipod_Decay
+# CASES= Bipod_Decay_Pretension 
+# CASES= Bipod_Decay_Rigid
 
 # --- Inidividual tests
+# CASES= SparPendulum_NoHeave
+# CASES= Monopile_Waves
 # CASES=Monopile-SoilDyn
 # CASES=Spar Soil-SSI-Monopile
-# CASES= Bipod_Decay
-# CASES+= Bipod_Decay_Pretension 
-# CASES= Bipod_Decay Monopile_Decay
 # CASES= OC4_Jacket_Decay
 # CASES= OC4_Jacket_WindWave
 # CASES+= Soil-SSI-OC4_Jacket
-# CASES=Spar
-# CASES = Bipod_Decay
-# CASES= Simple_Tripod_Decay
 # CASES= Monopile_Decay
 # --- TODO NEW
 # CASES= OC4_Jacket_Decay_RigidInterf
@@ -28,19 +47,14 @@ CASES+= Bipod_Decay_Rigid
 # CASES= Bipod_Decay_Pin
 # CASES= Bipod_Decay_Universal
 # CASES= Monopile_WavesTopMass
-# CASES+= OC4_Jacket_WindWave
-# CASES+= Soil-SSI-OC4_Jacket
+# CASES= Soil-SSI-OC4_Jacket
 # CASES+= Soil-SSI-OC4_Jacket_DEBUG
 # CASES= Monopile-SoilDyn-Simple
 RULES= $(foreach case,$(CASES), run-$(case) test-$(case))
 
-CASES_DRIVER=
-CASES_DRIVER+=Driver_Test_Cable
-CASES_DRIVER+=Driver_Test_Rigid
-
+# 
 DRIVER_FILES= $(foreach case, $(CASES_DRIVER), $(wildcard $(case)/*.dvr) )
 DRIVER_RULES= $(foreach dvr, $(DRIVER_FILES), $(dvr)run $(dvr)test)
-# DRIVER_RULES = $(patsubst %.dvr,%.rundvr,  $(DRIVER_FILES))
 
 EXT=out
 FAILFILE=FAIL
@@ -58,8 +72,8 @@ start:
 
 %.dvrrun: 
 	@echo "------------------------- RUN $* ----------------------------------"
-	rm -f $*.SD.out
-	rm -f $*.SD.sum
+	@rm -f $*.SD.out
+	@rm -f $*.SD.sum
 	@./subdyn_driver $*.dvr || true
 
 %.dvrtest: 

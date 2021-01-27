@@ -124,8 +124,7 @@ MemberID   NOutCnt    NodeCnt [NOutCnt=how many nodes to get output for [< 10]; 
 "IntfFXss"   - X-displacement at the interface
 "IntfFYss"   - X-displacement at the interface
 "IntfFZss"   - X-displacement at the interface
-"IntfMXss"   - X-displacement at the interface
-"IntfMYss"   - X-displacement at the interface
+"IntfMXss"   - X-displacement at the interface #"IntfMYss"   - X-displacement at the interface
 "IntfMZss"   - X-displacement at the interface
 "M1N1FKxe"    - Static component of action force. Note that Z is the axial direction in the local member coordinate system.
 "M1N2FKxe"    - Static component of action force. Note that Z is the axial direction in the local member coordinate system.

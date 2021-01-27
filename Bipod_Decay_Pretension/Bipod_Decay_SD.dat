@@ -26,8 +26,8 @@ True             CBMod       - [T/F] If True perform C-B reduction, else full FE
 JointID          JointXss               JointYss               JointZss JointType JointDirX JointDirY JointDirZ JointStiff 
   (-)               (m)                    (m)                    (m)    (-) (-) (-) (-) (Nm/rad)
    1              0.00000                0.00000               20.00000  1 0.0 0.0 0.0 0.0 
-   2             -1.71000                0.00000                0.00000  1 0.0 0.0 0.0 0.0 
-   3              1.71000                0.00000                0.00000  1 0.0 0.0 0.0 0.0 
+   2             -1.71000                0.00000                5.00000  1 0.0 0.0 0.0 0.0 
+   3              1.71000                0.00000                5.00000  1 0.0 0.0 0.0 0.0 
    4             -6.00000                0.00000              -50.00000  1 0.0 0.0 0.0 0.0 
    5              6.00000                0.00000              -50.00000  1 0.0 0.0 0.0 0.0 
 ------------------- BASE REACTION JOINTS: 1/0 for Locked/Free DOF @ each Reaction Node ---------------------
@@ -63,7 +63,7 @@ PropSetID     YoungE          ShearG          MatDens          XsecA          Xs
              1   NCablePropSets   - Number of cable cable properties
 PropSetID     EA          MatDens        T0    CtrlChannel
   (-)         (N)         (kg/m)        (N)        (-)
-   10       2.10000e+11   7850.00      2.0E+11      0
+   10       2.10000e+11   7850.00      1.0E+11      0
 ----------------------- RIGID LINK PROPERTIES ------------------------------------
              1   NRigidPropSets - Number of rigid link properties
 PropSetID   MatDens   

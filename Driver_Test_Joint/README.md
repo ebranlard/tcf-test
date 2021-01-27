@@ -1,0 +1,1 @@
+Gravity and extra moment have no effect on the displacements because the "ExtraMoment" only considers the Guyan motion, and in that case the Guyan motion is a pure translation along x. The rotation is taken care by the CB modes.

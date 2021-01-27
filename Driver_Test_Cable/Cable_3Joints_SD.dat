@@ -107,18 +107,42 @@ MemberID   NOutCnt    NodeCnt [NOutCnt=how many nodes to get output for [< 10]; 
 "M1N2TDzss"    - Static component of action force. Note that Z is the axial direction in the local member coordinate system.
 "M2N1TDzss"    - Static component of action force. Note that Z is the axial direction in the local member coordinate system.
 "M2N2TDzss"    - Static component of action force. Note that Z is the axial direction in the local member coordinate system.
-"M1N1RDxe"    - Static component of action force. Note that Z is the axial direction in the local member coordinate system.
-"M1N2RDxe"    - Static component of action force. Note that Z is the axial direction in the local member coordinate system.
-"M2N1RDxe"    - Static component of action force. Note that Z is the axial direction in the local member coordinate system.
-"M2N2RDxe"    - Static component of action force. Note that Z is the axial direction in the local member coordinate system.
-"M1N1RDxe"    - Static component of action force. Note that Z is the axial direction in the local member coordinate system.
-"M1N2RDye"    - Static component of action force. Note that Z is the axial direction in the local member coordinate system.
-"M2N1RDye"    - Static component of action force. Note that Z is the axial direction in the local member coordinate system.
-"M2N2RDye"    - Static component of action force. Note that Z is the axial direction in the local member coordinate system.
-"M1N1RDze"    - Static component of action force. Note that Z is the axial direction in the local member coordinate system.
-"M1N2RDze"    - Static component of action force. Note that Z is the axial direction in the local member coordinate system.
-"M2N1RDze"    - Static component of action force. Note that Z is the axial direction in the local member coordinate system.
-"M2N2RDze"    - Static component of action force. Note that Z is the axial direction in the local member coordinate system.
+"M1N1RDxe"    - 
+"M1N2RDxe"    -
+"M2N1RDxe"    - 
+"M2N2RDxe"    - 
+"M1N1RDye"    - 
+"M1N2RDye"    - 
+"M2N1RDye"    - 
+"M2N2RDye"    - 
+"M1N1RDze"    - 
+"M1N2RDze"    - 
+"M2N1RDze"    - 
+"M2N2RDze"    - 
+"M1N1TAxe"    - 
+"M1N2TAxe"    -
+"M2N1TAxe"    - 
+"M2N2TAxe"    - 
+"M1N1TAxe"    - 
+"M1N2TAye"    - 
+"M2N1TAye"    - 
+"M2N2TAye"    - 
+"M1N1TAze"    - 
+"M1N2TAze"    - 
+"M2N1TAze"    - 
+"M2N2TAze"    - 
+"M1N1RAxe"    - 
+"M1N2RAxe"    -
+"M2N1RAxe"    - 
+"M2N2RAxe"    - 
+"M1N1RAxe"    - 
+"M1N2RAye"    - 
+"M2N1RAye"    - 
+"M2N2RAye"    - 
+"M1N1RAze"    - 
+"M1N2RAze"    - 
+"M2N1RAze"    - 
+"M2N2RAze"    - 
 "M1N1FKxe"    - Static component of action force. Note that Z is the axial direction in the local member coordinate system.
 "M1N2FKxe"    - Static component of action force. Note that Z is the axial direction in the local member coordinate system.
 "M2N1FKxe"    - Static component of action force. Note that Z is the axial direction in the local member coordinate system.

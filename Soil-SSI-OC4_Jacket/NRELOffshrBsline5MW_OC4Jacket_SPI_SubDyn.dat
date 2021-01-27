@@ -271,5 +271,5 @@ MemberID   NOutCnt    NodeCnt [NOutCnt=how many nodes to get output for [< 10]; 
 "M5N2TDXss, M5N2TDYss, M5N2TDZss, M6N2TDXss, M6N2TDYss, M6N2TDZss"       - Deflections at X4S2, X4S3: use cosdir matrix to get OOP deflection
 "M5N1FKXe,M5N1FKYe,M5N1FKZe,M6N1FKXe,M6N1FKYe,M6N1FKZe"                  - Forces OOP and Axial at mid brace points x,y, z  >> *we will need to do some post-processing using the direction cosine matrices to get OOP forces
 "M7N1FKZe, M8N1FKZe"                                                     - Axial force in leg 2 and leg 4 at mudbrace level: MudbraceL2, MudbraceL4
-"-ReactFXss, -ReactFYss, -ReactMXss, -ReactMYss, -ReactMZss, -ReactFZss" - Base reactions: fore-aft shear, side-to-side shear, side-to-side moment, fore-aft moment, yaw moment, vertical force
+"-ReactFXss, -ReactFYss, -ReactMXss, -ReactMYss, -ReactFZss" - Base reactions: fore-aft shear, side-to-side shear, side-to-side moment, fore-aft moment, yaw moment, vertical force
 END of output channels and end of file. (the word "END" must appear in the first 3 columns of this line)
